@@ -17,7 +17,7 @@ export const getConfig = (): Config => {
     siteMeta,
     isPlaceholder: false,
     isEditThisPage: isEditThisPage || false,
-    isShowStarButton: isShowStarButton || true,
+    isShowStarButton: isShowStarButton || false,
   };
 
   if (NODE_ENV === 'development') {
