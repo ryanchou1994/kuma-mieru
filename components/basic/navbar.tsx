@@ -17,7 +17,8 @@ import Image from 'next/image';
 import NextLink from 'next/link';
 import { useCallback, useEffect, useRef } from 'react';
 
-import { GithubIcon, SearchIcon } from '@/components/basic/icons';
+// 已移除 GithubIcon 的導入，因為它不再被使用
+import { SearchIcon } from '@/components/basic/icons';
 import { ThemeSwitch } from '@/components/basic/theme-switch';
 import { NavbarSkeleton } from '@/components/ui/CommonSkeleton';
 import { apiConfig } from '@/config/api';
@@ -104,18 +105,19 @@ export const Navbar = () => {
     </div>
   );
 
-  const starButton = (
-    <Button
-      isExternal
-      as={Link}
-      className="text-sm font-normal text-default-600 bg-default-100"
-      href={siteConfig.links.github}
-      startContent={<GithubIcon />}
-      variant="flat"
-    >
-      Star on Github
-    </Button>
-  );
+  // 已刪除 starButton 的定義，因為它不再被使用
+  // const starButton = (
+  //   <Button
+  //     isExternal
+  //     as={Link}
+  //     className="text-sm font-normal text-default-600 bg-default-100"
+  //     href={siteConfig.links.github}
+  //     startContent={<GithubIcon />}
+  //     variant="flat"
+  //   >
+  //     Star on Github
+  //   </Button>
+  // );
 
   const getIconUrl = () => {
     if (apiConfig.siteMeta.icon) {
@@ -173,7 +175,8 @@ export const Navbar = () => {
             <li className="hidden lg:block">
               <div className="flex flex-col">{searchInput}</div>
             </li>
-            <li className="hidden sm:block">{apiConfig.isShowStarButton && starButton}</li>
+            {/* 已刪除桌面版導航欄中 starButton 的使用 */}
+            {/* <li className="hidden sm:block">{apiConfig.isShowStarButton && starButton}</li> */}
           </ul>
         </nav>
       </NavbarContent>
@@ -210,7 +213,8 @@ export const Navbar = () => {
       </NavbarContent>
 
       <NavbarMenu className="z-60">
-        {apiConfig.isShowStarButton && starButton}
+        {/* 已刪除移動版菜單中 starButton 的使用 */}
+        {/* {apiConfig.isShowStarButton && starButton} */}
         <div className="flex flex-col gap-4">{searchInput}</div>
         <nav aria-label={t('navbar.mobileNav')}>
           <ul className="mx-4 mt-4 flex flex-col gap-2">
